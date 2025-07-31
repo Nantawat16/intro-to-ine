@@ -1,0 +1,78 @@
+*{
+    box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+/* Header/logo Title */
+.header{
+    padding: 60px;
+    text-align: center;
+    background: #ec7d2e;
+    color: white;
+}
+
+/* Style the navigation bar */
+.navbar {
+    display: flex;
+    background-color: rgb(246, 102, 55);
+}
+
+/* Style the navigation bar link */
+.navbar a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* Change color on hover */
+.navbar a:hover{
+    background-color: #ec7d2e;
+    color: black;
+}
+
+/* Column container */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Create two unequal column that next sits next to each other */
+/* Sidbar/left column */
+.side {
+    flex: 30%;
+    background-color: #ffb682;
+    padding: 20px;
+}
+
+/* Main column */
+.main {
+    flex: 70%;
+    background-color: #ffcfac;
+    padding: 20px;
+}
+
+/* Fake image, just for this example */
+.fakeing {
+    background-color: #ec7d2e;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Footer */
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: rgb(246, 102, 55);
+}
+
+@media screen and (max-width: 700px){
+    .row, .navbar{
+        flex-direction: column;
+    }
+}
