@@ -1,0 +1,143 @@
+*{
+    box-sizing: border-box; /* รวม padding และ border เข้าไปในขนาด (width/height) */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 
+    Arial, sans-serif; /* กำหนด font หลัก */
+}
+.header {
+    grid-area: header; /* element นี้จะอยู่ในพื้นที่ header ของ grid */
+    background-color: #e9edc9; /* สีเขียวอ่อน */
+    padding: 20px; /* ระยะห่างด้านใน */
+    text-align: center; /* จัดข้อความให้อยู่กึ่งกลาง */
+    font-size: 30px; /* ขนาดตัวอักษรใหญ่ */
+}
+.navbar {
+    font-size: 17px; /* ขนาดตัวอักษรเมนู */
+    height: 60px; /* ความสูงของ navbar */
+    align-items: center; /* จัดแนวเนื้อหาให้อยู่กึ่งกลางแนวตั้ง */
+    display: grid; /* ใช้ grid layout */
+    grid-area: nav; /* element นี้จะอยู่ในพื้นที่ nav */
+    background-color: #d4a373; /* สีพื้นหลังสีน้ำตาล */
+    overflow: hidden; /* ถ้าเนื้อหาเกินจะถูกซ่อน */
+    padding: 0px 10px; /* ระยะห่างซ้าย-ขวา */
+    grid-template-areas: 
+    'nav-link nav-link nav-serch'; /* layout ของ grid */
+}
+.nav-serch{
+    padding: 0px 10px; /* ระยะห่างซ้าย-ขวา */
+    align-items: center; /* จัดเนื้อหาให้อยู่กึ่งกลางแนวตั้ง */
+    display: grid; /* ใช้ grid layout */
+    grid-template-columns: 70% 20%; /* แบ่งเป็น 2 คอลัมน์: ช่อง search 70%, ปุ่ม 20% */
+    gap: 5px; /* ระยะห่างระหว่างช่อง */
+    grid-area: nav-serch; /* พื้นที่ grid */
+}  
+.nav-serch p{
+    display: grid; /* ใช้ grid layout */
+    align-items: center; /* จัดข้อความให้อยู่กึ่งกลางแนวตั้ง */
+    padding: 0px 10px; /* ระยะห่างซ้าย-ขวา */
+    height: 70%; /* ความสูง 70% ของ parent */
+    border-radius: 6px; /* มุมโค้ง */
+    background-color: white; /* สีพื้นหลังขาว */
+}
+.nav-serch button{
+    font-size: 20px; /* ขนาดตัวอักษร */
+    height: 70%; /* ความสูง */
+    color: white; /* สีตัวอักษร */
+    border-radius: 6px; /* มุมโค้ง */
+    background-color: rgb(59, 175, 238); /* ปุ่มสีฟ้า */
+}
+.nav-link a{
+    grid-area: nav-link; /* พื้นที่ grid */
+    color: white; /* สีข้อความขาว */
+    padding: 100% 20px; /* padding บนล่างเยอะมาก, ซ้ายขวา 20px */
+    text-decoration: none; /* ตัดขีดเส้นใต้ลิงก์ */
+}
+.nav-link a:hover{
+    color: black; /* เปลี่ยนสีข้อความเป็นดำเมื่อ hover */
+    background-color: white; /* พื้นหลังเป็นสีขาว */
+    padding: 100% 20px; /* padding เท่าเดิม */
+}
+.content {
+    align-items: center; /* จัดเนื้อหาให้อยู่กึ่งกลางแนวตั้ง */
+    padding: 0px 20px; /* ระยะห่างซ้าย-ขวา */
+    grid-area: content; /* พื้นที่ grid */
+    background-color: #fefae0; /* สีพื้นหลังอ่อนมาก */
+    height: 450px; /* ความสูง */
+}
+.menu {
+    grid-area: menu; /* พื้นที่ grid */
+    background-color: #faedcd; /* สีพื้นหลังน้ำตาลอ่อน */
+    height: 450px; /* ความสูง */
+    padding: 0px 30px; /* ระยะห่างซ้าย-ขวา */
+}
+.menu a{
+    text-decoration: none; /* ลบเส้นใต้ลิงก์ */
+}
+.menu p{
+    padding: 1% 20px; /* ระยะห่างเล็กน้อย */
+    height: 30px; /* ความสูง */
+    color: white; /* สีตัวอักษรขาว */
+    background-color: #d4a373; /* สีพื้นหลังน้ำตาล */
+    border-radius: 6px; /* มุมโค้ง */
+    display: grid; /* ใช้ grid layout */
+    align-items: center; /* จัดข้อความให้อยู่กึ่งกลางแนวตั้ง */
+}
+.menu p:hover{
+    background-color: white; /* เปลี่ยนพื้นหลังเป็นขาวเมื่อ hover */
+    color: black; /* ตัวอักษรเป็นดำ */
+}
+.footer {
+    grid-area: footer; /* พื้นที่ grid */
+    background-color: #e9edc9; /* สีเขียวอ่อน */
+    padding: 5px; /* ระยะห่าง */
+    text-align: center; /* จัดข้อความกึ่งกลาง */
+    font-size: 30px; /* ขนาดฟอนต์ใหญ่ */
+}
+.grid-container{
+    display: grid; /* ใช้ grid layout */
+    grid-template-columns: 1fr 1fr 1fr; /* 3 คอลัมน์เท่ากัน */
+    grid-template-areas: 
+    'header header header'
+    'nav nav nav'
+    'content content menu'
+    'content content menu'
+    'footer footer footer'; /* layout ของทั้งหน้า */
+}
+table, th, td {
+    text-align: left; /* จัดข้อความชิดซ้าย */
+    padding-left: 10px; /* เว้นซ้าย */
+    height: 50%; /* ความสูง */
+    border: 1px solid black; /* เส้นขอบสีดำ */
+    border-collapse: collapse; /* รวมเส้นขอบให้เป็นเส้นเดียว */
+}
+th, td {
+    height: 10px; /* ความสูงของเซลล์ */
+}
+.image img{
+    border-radius: 6px; /* มุมโค้ง */
+    height: 290px; /* ความสูงภาพ */
+    width: auto; /* ความกว้างอัตโนมัติ */
+}
+.map iframe {
+    height: 340px; /* ความสูงแผนที่ */
+    width: 100%; /* เต็มความกว้าง */
+}
+.regis h3{
+    margin: 1px; /* ระยะขอบเล็กน้อย */
+}
+.regis input{
+    border: 2px solid rgb(192, 182, 182); /* ขอบสีเทา */
+    border-radius: 4px; /* มุมโค้ง */
+    margin: 2px; /* เว้นรอบๆ */
+    width: 40%; /* ความกว้าง 40% */
+}
+.button_regis {
+    background-color: rgb(22, 197, 77); /* ปุ่มสีเขียว */
+    color: white; /* ตัวอักษรสีขาว */
+}
+.button_reset {
+    background-color: rgb(235, 53, 50); /* ปุ่มสีแดง */
+    color: white; /* ตัวอักษรสีขาว */
+}
+.head_table {
+    background-color: #d0d5ae; /* สีหัวตาราง (เขียวอ่อน) */
+}
