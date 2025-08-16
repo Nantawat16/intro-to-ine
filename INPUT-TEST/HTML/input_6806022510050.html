@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>แบบฟอร์มการสมัครเรียนต่อระดับปริญญาตรี</h2>
+    <form>
+        <h3>ส่วนที่ 1 ข้อมูลส่วนตัวผู้สมัคร</h3>
+        คำนำหน้าชื่อ :
+        <select name="คำนำหน้า" required>
+            <option value="" disabled selected hidden>กรุณาเลือกคำนำหน้า</option>
+            <option value="นาย">นาย</option>
+            <option value="นางสาว">นางสาว</option>
+            <option value="นาง">นาง</option>
+        </select>
+        ชื่อ : <input type="text" required>
+        นามสกุล : <input type="text" required><br><br>
+        เลขประจำตัวประชาชน (13 หลัก) : <input type="text" minlength="13" maxlength="13"><br><br>
+        วันเดือนปีเกิด : <input type="date" required>
+        อายุ (ปี) : <input type="number" maxlength="2" required><br><br>
+        เพศ : 
+        <input type="radio" name="เพศ" required value="ชาย">ชาย
+        <input type="radio" name="เพศ" value="หญิง">หญิง
+        <input type="radio" name="เพศ" value="ไม่ระบุ">ไม่ระบุ<br><br>
+        สัญชาติ : <input type="text" required>
+        เชื้อชาติ : <input type="text" required>
+        ศาสนา : <input type="text" required><br><br>
+        เบอร์โทรศัพท์ : <input type="tel" required><br><br>
+        อีเมล : <input type="email" required><br><br>
+        ที่อยู่ : <textarea placeholder="กรุกรอกที่อยู่" required></textarea><br><br>
+
+        <h3>ส่วนที่ 2 ข้อมูลการสมัครเรียน</h3>
+        วุฒิที่จบมา : 
+        <input type="radio" name="วุฒิ" required value="ม.6">ม.6
+        <input type="radio" name="วุฒิ" value="ปวช">ปวช
+        <input type="radio" name="วุฒิ" value="ปวส">ปวส<br><br>
+        ชื่อสถานศึกษาที่จบ : <input type="text" required><br><br>
+        ปีที่จบ : <input type="number" maxlength="4" required><br><br>
+        GPA : <input type="number" step="0.01" required><br><br>
+        สาขาที่สมัคร : 
+        <select name="สาขา" required>
+            <option value="" disabled selected hidden>กรุณาเลือกสาขา</option>
+            <option value="IT">IT</option>
+            <option value="ITI">ITI</option>
+            <option value="INE">INE</option>
+            <option value="INET">INET</option>
+        </select><br><br>
+        เหตุผลที่เลือกสาขา : <textarea placeholder="กรุกรอกเหตุผล"></textarea><br><br>
+
+        <h3>ส่วนที่ 3 ประวัติการศึกษา</h3>
+        <table>
+            <tr>
+                <th>ระดับการศึกษา</th>
+                <th>สถานศึกษา</th>
+                <th>จังหวัด</th>
+                <th>ปีที่เข้า</th>
+                <th>ปีที่จบ</th>
+                <th>วุฒิที่ได้รับ</th>
+                <th>GPA</th>
+            </tr>
+            <tr>
+                <td>ประถมศึกษา</td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>มัธยมศึกษา</td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>มัธยมปลาย/ปวช./ปวส.</td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+            </tr>
+        </table><br><br>
+
+        <h3>ส่วนที่ 4 เอกสารแนบ</h3>
+        แนบไฟล์สำเนาบัตรประชาชน : <input type="file" required multiple><br><br>
+        แนบไฟล์วุฒิการศึกษา (เช่น ปพ.1) : <input type="file" required multiple><br><br>
+
+        <h3>ส่วนที่ 5 ยืนยันและส่งฟอร์ม</h3>
+        ยอมรับเงื่อนไข : <input type="checkbox" required><br><br>
+        <input type="submit" value="ตกลง"required>
+        <input type="reset" value="ยกเลิก"required>
+    </form>
+</body>
+</html>
