@@ -1,0 +1,72 @@
+/* รีเซ็ตการคำนวณขนาดกล่อง: รวม padding และ border ไว้ใน width/height */
+* {
+    box-sizing: border-box;
+}
+
+/* กำหนดฟอนต์หลักของทั้งหน้า */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* สไตล์ส่วนหัว (Header) */
+.header {
+    grid-area: header; /* ใช้พื้นที่ grid ที่ชื่อว่า header */
+    background-color: pink; /* พื้นหลังสีชมพู */
+    padding: 30px; /* ระยะห่างรอบใน 30px */
+    text-align: center; /* จัดข้อความให้อยู่ตรงกลางแนวนอน */
+    font-size: 35px; /* ขนาดตัวอักษร */
+}
+
+/* คอนเทนเนอร์หลักที่ใช้ Grid */
+.grid-container {
+    display: grid; /* กำหนดการจัดวางเป็น Grid Layout */
+    grid-template-areas:
+    'header header header header header header' /* แถวแรกมี header เต็มทั้ง 6 คอลัมน์ */
+    'left middle middle middle middle right'   /* แถวที่สอง: ซ้าย - กลาง(กินหลายช่อง) - ขวา */
+    'footer footer footer footer footer footer'; /* แถวสุดท้าย footer เต็มทั้ง 6 คอลัมน์ */
+    /* grid-column-gap: 10px;  <- คำสั่งนี้ถูกคอมเมนต์ไว้ ถ้าเปิดใช้จะเพิ่มช่องว่างระหว่างคอลัมน์ */
+}
+
+/* กำหนดคุณสมบัติพื้นฐานให้ทุกคอลัมน์ */
+.left,
+.middle,
+.right {
+    padding: 10px; /* ระยะห่างรอบใน */
+    height: 300px; /* ความสูงคงที่ 300px (จริงๆ ไม่ควร fix แบบนี้ ใช้แค่เพื่อสาธิต) */
+}
+
+/* คอลัมน์ซ้าย */
+.left {
+    grid-area: left; /* ใช้พื้นที่ grid ที่ชื่อว่า left */
+}
+
+/* คอลัมน์กลาง */
+.middle {
+    grid-area: middle; /* ใช้พื้นที่ grid ที่ชื่อว่า middle */
+}
+
+/* คอลัมน์ขวา */
+.right {
+    grid-area: right; /* ใช้พื้นที่ grid ที่ชื่อว่า right */
+}
+
+/* ส่วนท้าย (Footer) */
+.footer {
+    grid-area: footer; /* ใช้พื้นที่ grid ที่ชื่อว่า footer */
+    background-color: orange; /* พื้นหลังสีส้ม */
+    padding: 10px; /* ระยะห่างรอบใน */
+    text-align: center; /* จัดข้อความกึ่งกลาง */
+}
+
+/* ทำให้ layout ตอบสนองกับหน้าจอขนาดเล็ก (Responsive) */
+/* เมื่อหน้าจอกว้างน้อยกว่า 600px ทุกคอลัมน์จะเรียงจากบนลงล่าง */
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-areas:
+        'header header header header header header' /* header อยู่บนสุด */
+        'left left left left left left'             /* left เต็มแถว */
+        'middle middle middle middle middle middle' /* middle เต็มแถว */
+        'right right right right right right'       /* right เต็มแถว */
+        'footer footer footer footer footer footer'; /* footer อยู่ล่างสุด */
+    }
+}
